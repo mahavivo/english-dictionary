@@ -1,3 +1,7 @@
+#!/usr/bin/env python
+# -*- coding: UTF-8 -*-
+
+
 file_src = "/users/vivo/desktop/oxford_dict_english.txt"
 
 file_dst = "/users/vivo/desktop/dict_result.txt"
