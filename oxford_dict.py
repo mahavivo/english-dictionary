@@ -4,7 +4,7 @@
 
 file_src = "/users/vivo/desktop/oxford_dict_english.txt"
 
-file_dst = "/users/vivo/desktop/dict_result.txt"
+file_dst = "/users/vivo/desktop/oxford_dict_result.txt"
 
 
 def parser(text):
