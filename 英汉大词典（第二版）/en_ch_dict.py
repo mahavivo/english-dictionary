@@ -3,9 +3,7 @@
 
 
 file_src = "/users/vivo/desktop/英汉大词典_INIT.txt"
-
 file_dst = "/users/vivo/desktop/英汉大词典_edited.txt"
-
 
 
 def parser(text):
