@@ -1884,6 +1884,3 @@ if __name__ == '__main__':
     def test5():
         print(tools.validate_word('Hello World', False))
     test3()
-
-
-
