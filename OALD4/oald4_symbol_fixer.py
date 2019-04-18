@@ -11,7 +11,7 @@ OALD4原始文档音标使用了"Kingsoft Phonetic Plain"字体，
 import re
 
 
-def converter(match):
+def convertor(match):
     phonetic_string = match.group()
     correct_symbol = phonetic_string.replace('5', 'ˈ')\
         .replace('7', 'ˌ').replace('9', 'ˌ')\
@@ -36,13 +36,11 @@ def main():
 
     with open(file_src, 'r') as f:
         text = f.read()
-
         p = re.compile('/.*?; .*?/')
+        result = re.sub(p, convertor, text)
 
-        result = re.sub(p, converter, text)
-
-    with open(file_dst, 'w') as fo:
-        fo.write(result)
+    with open(file_dst, 'w') as f_out:
+        f_out.write(result)
 
 
 if __name__ == '__main__':
