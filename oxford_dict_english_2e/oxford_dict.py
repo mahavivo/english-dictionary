@@ -1,9 +1,5 @@
 #!/usr/bin/env python
-# -*- coding: UTF-8 -*-
-
-
-file_src = '/users/vivo/desktop/oxford_dict_english.txt'
-file_dst = '/users/vivo/desktop/oxford_dict_result.txt'
+# -*- coding: utf-8 -*-
 
 
 def parser(text):
@@ -74,28 +70,35 @@ def parser(text):
     return outtext
 
 
-all_entry = []
+def main():
+    file_src = '/users/vivo/desktop/oxford_dict_english.txt'
+    file_dst = '/users/vivo/desktop/oxford_dict_result.txt'
 
-with open(file_src, 'r') as f:
-    full_text = f.read()
-    full_text = full_text.replace('/▶', '/\n▶')
+    all_entry = []
 
-    entry_list = full_text.split('————————————')
-    for entry in entry_list:
-        if entry:
-            row_list = []
-            line_list = entry.splitlines()
-            for line in line_list:
-                line_out = parser(line)
-                row_list.append(line_out)
-            row_list = [x for x in row_list if x != '']
-            new_entry = '\n'.join(row_list)
-            new_entry = new_entry.strip()
+    with open(file_src, 'r') as f:
+        full_text = f.read()
+        full_text = full_text.replace('/▶', '/\n▶')
 
-        all_entry.append(new_entry)
+        entry_list = full_text.split('————————————')
+        for entry in entry_list:
+            if entry:
+                row_list = []
+                line_list = entry.splitlines()
+                for line in line_list:
+                    line_out = parser(line)
+                    row_list.append(line_out)
+                row_list = [x for x in row_list if x != '']
+                new_entry = '\n'.join(row_list)
+                new_entry = new_entry.strip()
+
+                all_entry.append(new_entry)
+
+    with open(file_dst, 'w') as f_out:
+        for each in all_entry:
+            # each = ' '.join(each.splitlines())
+            f_out.write('\n\n' + each)
 
 
-with open(file_dst, 'w') as f_out:
-    for each in all_entry:
-        # each = ' '.join(each.splitlines())
-        f_out.write('\n\n' + each)
+if __name__ == '__main__':
+    main()
