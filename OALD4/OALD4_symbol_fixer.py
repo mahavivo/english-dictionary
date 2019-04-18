@@ -1,14 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-
 """
 OALD4原始文档音标使用了"Kingsoft Phonetic Plain"字体，
 导致不安装该字体的电脑会出现乱码，在此批量替换修正。
 金山词霸音标字体编码表可参见 http://www.fmddlmyy.cn/text66.html
 
 """
-
 
 import re
 
