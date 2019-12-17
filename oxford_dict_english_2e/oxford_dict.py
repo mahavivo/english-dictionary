@@ -64,6 +64,8 @@ def parser(text):
         outtext = text.strip()
     elif text.startswith('•'):
         outtext = text.strip()
+    elif '•' in text:
+        outtext = '➜ ' + text.partition('•')[2].strip()
     else:
         outtext = ''
 
@@ -71,12 +73,12 @@ def parser(text):
 
 
 def main():
-    file_src = '/users/vivo/desktop/oxford_dict_english.txt'
-    file_dst = '/users/vivo/desktop/oxford_dict_result.txt'
+    file_src = r'C:\Users\vivo\Desktop\oxford_dict_english.txt'
+    file_dst = r'C:\Users\vivo\Desktop\oxford_dict_result.txt'
 
     all_entry = []
 
-    with open(file_src, 'r') as f:
+    with open(file_src, 'r', encoding='UTF-8') as f:
         full_text = f.read()
         full_text = full_text.replace('/▶', '/\n▶')
 
@@ -94,7 +96,7 @@ def main():
 
                 all_entry.append(new_entry)
 
-    with open(file_dst, 'w') as f_out:
+    with open(file_dst, 'w', encoding='UTF-8') as f_out:
         for each in all_entry:
             # each = ' '.join(each.splitlines())
             f_out.write('\n\n' + each)
