@@ -9,7 +9,7 @@ from bs4 import BeautifulSoup
 
 file_src = r'C:\Users\vivo\Desktop\OxfordAdvanced.txt'
 
-file_dst = r'C:\Users\vivo\Desktop\x1.txt'
+file_dst = r'C:\Users\vivo\Desktop\OxfordAdvanced_extractor.txt'
 file_csv = r'C:\Users\vivo\Desktop\OxfordAdvanced_extractor.csv'
 
 
