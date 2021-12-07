@@ -9,7 +9,7 @@ from bs4 import BeautifulSoup
 
 file_src = r'C:\Users\vivo\Desktop\OxfordAdvanced.txt'
 
-file_dst = r'C:\Users\vivo\Desktop\OxfordAdvanced_extractor.txt'
+file_dst = r'C:\Users\vivo\Desktop\x1.txt'
 file_csv = r'C:\Users\vivo\Desktop\OxfordAdvanced_extractor.csv'
 
 
@@ -62,6 +62,20 @@ def make_label_g(soup):
         label = ''
 
     return label
+
+
+def make_dc(soup):
+    dc = soup.find(class_='dc')
+    if dc:
+        if dc.find(class_='chn'):
+            dc = dc.find(class_='chn').get_text()
+            dc =   '(' + dc + ')'
+        else:
+            dc = soup.find(class_='dc').get_text()
+    else:
+        dc = ''
+
+    return dc
 
 
 def make_def_g(soup):
@@ -131,6 +145,12 @@ def make_full_def(soup):
 
         full_def = sense + definition
 
+    elif soup.find(class_='dc'):
+
+        dc = make_dc(soup)
+        definition = make_def_g(soup)
+
+        full_def = dc + definition
 
     else:
 
