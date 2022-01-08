@@ -1,0 +1,78 @@
+/*单词原型*/
+.headword {font-weight:bold; font-size:120%; color:darkblue;}
+/*单词音标*/
+.phonetics {}
+/*单词词性*/
+.pos {display:block; font-style:italic; color:darkred; font-weight:bold;}
+/*预解释 | 语法事项*/
+.gram{color:#0033cc;}
+/*释义项*/
+.definition{display:block;}
+/*例句*/
+div.example{margin-left:15px; font-size:92%; background-color:#F0F8FF;}
+/*例句原型*/
+.ex_en {color:#339900;}
+/*例句中文翻译*/
+.ex_cn {color:#666600;}
+
+
+/*用法说明*/
+guide {color:Indigo;}
+
+
+/* 常用词组 */
+div.phrase {
+	border: 1.2px dashed #0088DD;	/* 虛線藍框 */
+	border-radius: 12px;	/* 四方角變圓角 */
+	margin: 1em 0;	/* 上下左右外留邊 */
+	padding: 0.6em 1.3em 0.6em 1.3em;	/* 上右下左（順時鐘）內留邊 */
+	line-height: 135%;
+}
+
+/* 常用词组的詞頭 */
+div.phrase .headword {
+	color: teal;
+}
+
+/* 常用词组的中文釋義 */
+div.phrase span.definition {
+/*	display: inline; */
+}
+
+/* 常用词组的中文釋義連續出現時 */
+div.phrase span.definition + span.definition {
+	display: block;
+}
+
+
+/* 习惯用语 */
+div.idiom {
+	border: 1.2px dashed #0088DD;	/* 虛線藍框 */
+	border-radius: 12px;	/* 四方角變圓角 */
+	margin: 1em 0;	/* 上下左右外留邊 */
+	padding: 0.6em 1.3em 0.6em 1.3em;	/* 上右下左（順時鐘）內留邊 */
+	line-height: 135%;
+}
+
+/* 习惯用语的詞頭 */
+div.idiom .headword {
+	color: brown;
+}
+
+/* 习惯用语的中文釋義 */
+div.idiom span.definition {
+/*	display: inline; */
+}
+
+/* 习惯用语的中文釋義連續出現時 */
+div.idiom span.definition + span.definition {
+	display: block;
+}
+
+
+
+/* div.phrase {background-color:#F5F5F5;} */
+/* 习惯用语 */
+/* div.idiom {background-color:#F5F5F5;} */
+/* 词性变化 */
+div.variant{}
